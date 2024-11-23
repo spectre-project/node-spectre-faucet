@@ -62,6 +62,8 @@ export class FaucetBalance extends BaseElement {
     this.balances = {};
     this.blueScores = {};
     //this.network = flow.app.network;
+    this.timestamps = [];
+    this.lastBlueScore = null;
   }
 
   onlineCallback() {
@@ -91,6 +93,30 @@ export class FaucetBalance extends BaseElement {
     (async () => {
       for await (const msg of this.blueScoreUpdates) {
         const { network, blueScore } = msg.data;
+
+        const currentTimestamp = performance.now();
+
+        if (this.lastBlueScore !== null) {
+          this.timestamps.push(currentTimestamp);
+          if (this.timestamps.length > 10) {
+            this.timestamps.shift();
+          }
+
+          if (this.timestamps.length > 1) {
+            const timeDiff =
+              (this.timestamps[this.timestamps.length - 1] -
+                this.timestamps[0]) /
+              1000;
+            const blocksMined = this.timestamps.length - 1;
+
+            if (timeDiff > 0) {
+              this.blocksSinceLastUpdate = blocksMined / timeDiff;
+            }
+          }
+        }
+
+        this.lastBlueScore = parseInt(blueScore, 10);
+
         this.blueScores[network] = blueScore;
         if (this.network == network) this.requestUpdate();
       }
@@ -112,6 +138,9 @@ export class FaucetBalance extends BaseElement {
     const blueScore = this.blueScores[this.network]
       ? FlowFormat.commas(this.blueScores[this.network])
       : "---";
+    const blocksSinceLastUpdate = this.blocksSinceLastUpdate
+      ? this.blocksSinceLastUpdate.toFixed(1)
+      : "--.-";
 
     return html`
       <div class="wrapper">
@@ -122,6 +151,11 @@ export class FaucetBalance extends BaseElement {
             <div class="tiny-caption">DAG BLUE SCORE</div>
             <div class="tiny-value">${blueScore}</div>
           </div>
+          <div class="blue-score" col>
+            <div class="tiny-caption">BLOCKS/S</div>
+            <div class="tiny-value">${blocksSinceLastUpdate}</div>
+          </div>
+
           ${pending
             ? html`
                 <div class="pending" col>
