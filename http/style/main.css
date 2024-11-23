@@ -10,7 +10,7 @@ body.loading:after {
   top: 0px;
   right: 0px;
   bottom: 0px;
-  background: rgb(255, 255, 255) no-repeat center;
+  background: rgb(46, 46, 46) no-repeat center;
   background-image: url("/images/spinner.svg");
   background-size: 100px auto;
   min-height: 100vh;
@@ -112,8 +112,8 @@ body:not(.flow-theme-light) {
 }
 
 .flow-theme-light .menu li.active {
-  --fa-icon-color: #ffffff;
-  color: #ffffff;
+  --fa-icon-color: #3c0e0e;
+  color: #3c0e0e;
 }
 
 .logo.light {
@@ -173,7 +173,7 @@ body.flow-theme-dark {
   --color-box-active-border-color: #b1b1b1;
   --flow-box-shadow: 0 2px 2px 0 rgba(10, 10, 10, 0.14),
     0 3px 1px -2px rgba(10, 10, 10, 0.2), 0 1px 5px 0 rgba(10, 10, 10, 0.12);
-  --flow-background-inverse: #ffffff;
+  --flow-background-inverse: #3c0e0e;
   --flow-background-inverse-soft: #cccccc;
   --flow-background-color: #131723; /*#232323;*/
   color: #b1b1b1;
@@ -188,8 +188,8 @@ body.flow-theme-dark {
   --flow-list-item-active-border: 1px solid var(--flow-primary-color);
   --flow-list-item-hover-bg: #585858;
   --flow-list-item-active-bg: var(--flow-primary-color);
-  --flow-list-item-active-color: #ffffff;
-  --flow-data-field-value: #ffffff;
+  --flow-list-item-active-color: #3c0e0e;
+  --flow-data-field-value: #3c0e0e;
   --flow-data-field-caption: #cccccc;
   --flow-data-field-caption-shadow: rgba(209, 142, 121);
 
@@ -207,7 +207,7 @@ body.flow-theme-dark {
   --flow-input-line-height: 1;
   --flow-input-margin: 20px 0px;
   --flow-input-padding: 10px 10px 10px 16px;
-  --flow-input-bg: white;
+  --flow-input-bg: #3c0e0e;
   --flow-input-color: #585858;
   --flow-input-placeholder: #aaaaaa;
   --flow-input-border: 0px;
@@ -223,10 +223,10 @@ body.flow-theme-dark {
   --flow-select-border: var(--flow-input-border);
   --flow-select-label-border: 0px;
   --flow-select-selected-min-width: 200px;
-  --flow-btn-primary-bg-color: #4c5157;
-  --flow-btn-primary-border-color: #4c5157;
-  --flow-btn-hover-border-color: #808080;
-  --flow-btn-hover-primary-bg-color: #808080;
+  --flow-btn-primary-bg-color: #ff005a;
+  --flow-btn-primary-border-color: #000000;
+  --flow-btn-hover-border-color: #000000;
+  --flow-btn-hover-primary-bg-color: #b30042;
   --flow-btn-hover-primary-color: #000000;
   --flow-btn-border-color: none;
   --flow-btn-border-width: 1.5px;
@@ -251,43 +251,43 @@ body.flow-theme-dark {
   --flow-pagination-margin: 4px 4px;
   --flow-border-hover-color: rgb(231, 106, 106);
   --flow-link-hover-color: #015b77;
-  --flow-sunburst-graph-tip-color: white;
+  --flow-sunburst-graph-tip-color: #3c0e0e;
   --flow-gridstack-placeholder-bg: #aaaaaa;
-  background-color: #ffffff;
-  --flow-color: #585858;
+  background-color: #121212;
+  --flow-color: #ff005a;
   color: var(--flow-color);
   --flow-primary-color: #828080; /* var(--flow-color); */
-  --flow-border-color: rgb(29, 46, 46);
+  --flow-border-color: #ff005a;
   --flow-app-header-height: 100px;
   --flow-app-header-bg: rgba(200, 200, 200, 0.15);
-  --flow-app-drawer-bg: white;
-  --flow-list-item-active-bg: white;
+  --flow-app-drawer-bg: #3c0e0e;
+  --flow-list-item-active-bg: #3c0e0e;
   --flow-list-item-hover-bg: #585858;
   --flow-list-item-active-color: #585858;
-  --flow-background-inverse: #ffffff;
+  --flow-background-inverse: #3c0e0e;
   --flow-background-inverse-soft: #838383;
   --flow-background-color: var(--flow-color);
-  --panel-bg: #ffffff;
+  --panel-bg: #3c0e0e;
   --flow-btn-hover-bg-color: var(--finfr-order-entry-primary-color);
-  --flow-btn-hover-color: #ffffff;
+  --flow-btn-hover-color: #3c0e0e;
   --flow-terminal-bg-color: var(--panel-bg);
   --flow-terminal-color: var(--flow-color);
   --flow-font-family: "Trebuchet MS";
   --flow-data-badge-font-family: "Exo 2";
   --flow-data-badge-value-font-family: "Exo 2";
   --flow-data-badge-font-weight: normal;
-  --flow-menu-item-selected-bg: #ffffff;
+  --flow-menu-item-selected-bg: #3c0e0e;
   --flow-link-color: #3289f9;
   --flow-link-hover-color: rgb(0, 223, 255);
   --flow-link-font-family: "Open Sans";
   --flow-link-font-weight: normal;
-  --flow-dropdown-bg: white;
-  --flow-appdrawer-btn-bg: white;
-  --flow-menu-item-bg: #f5f4f4;
-  --flow-dialog-background-color: white;
+  --flow-dropdown-bg: #3c0e0e;
+  --flow-appdrawer-btn-bg: #3c0e0e;
+  --flow-menu-item-bg: #3c0e0e;
+  --flow-dialog-background-color: #3c0e0e;
   --flow-dialog-btn-padding: 10px 16px;
   --flow-menu-item-selected-color: var(--flow-color);
-  --flow-checkbox-checked-color: white;
+  --flow-checkbox-checked-color: #3c0e0e;
 }
 
 [row] {
